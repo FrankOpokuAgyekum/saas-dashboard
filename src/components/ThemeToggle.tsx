@@ -9,15 +9,8 @@ export default function ThemeToggle() {
     document.documentElement.classList.toggle("dark", isDark)
   }, [isDark])
 
-  function toggleTheme() {
-    setIsDark((prev) => !prev)
-  }
-
   return (
-    <button
-      onClick={toggleTheme}
-      className="px-3 py-1 rounded bg-slate-200 dark:bg-slate-700"
-    >
+    <button onClick={() => setIsDark(prev => !prev)}>
       Toggle Theme
     </button>
   )

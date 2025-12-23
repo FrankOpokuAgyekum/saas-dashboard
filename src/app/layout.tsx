@@ -2,12 +2,24 @@ import { document } from 'postcss'
 import './globals.css'
 import ThemeToggle from "@/components/ThemeToggle"
 
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+      (function () {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    `,
+  }}
+/>
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-
 
   return (
     <html lang="en">
