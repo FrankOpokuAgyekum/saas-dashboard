@@ -6,8 +6,6 @@ import { useEffect } from 'react'
 import { Sidebar } from '@/components/Sidebar'
 import ThemeToggle from '@/components/ThemeToggle'
 
-//const { logout } = useAuth()
-
 export default function DashboardLayout({
   children,
 }: {
@@ -20,14 +18,18 @@ export default function DashboardLayout({
     if (!loading && !user) {
       router.push('/login')
     }
-  }, [user, loading, router])
+  }, [loading, user, router])
 
-  if (loading || !user) {
+  if (loading) {
     return (
       <div className="flex items-center justify-center h-screen">
-        Loading...
+        Loading dashboard…
       </div>
     )
+  }
+
+  if (!user) {
+    return null
   }
 
   return (
@@ -35,13 +37,12 @@ export default function DashboardLayout({
       <Sidebar />
 
       <div className="flex flex-col flex-1">
-        <header className="flex items-center justify-between h-16 px-4 border-b border-slate-200 dark:border-slate-800">
+        <header className="flex items-center justify-between h-16 px-4 border-b">
           <h1 className="font-medium">Dashboard</h1>
           <ThemeToggle />
-          
         </header>
 
-        <main className="p-6">{children}</main>
+        <main className="p-6 space-y-6">{children}</main>
       </div>
     </div>
   )

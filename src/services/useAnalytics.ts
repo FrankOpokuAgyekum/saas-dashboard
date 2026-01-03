@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query'
 import { fetcher } from '@/lib/api'
 
 type AnalyticsResponse = {
+  chartData: any
   kpis: {
     activeUsers: { value: number; change: number }
     revenue: { value: number; change: number }
