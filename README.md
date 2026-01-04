@@ -4,7 +4,7 @@ A modern, production-style SaaS analytics dashboard built with Next.js, TypeScri
 Designed to showcase real-world frontend architecture, data handling, and UI/UX patterns.
 
 ## 🚀 Live Demo
-👉 https://FrankOpokuAgyekum/saas-dashboard.vercel.app
+👉 https://saas-dashboard-wine.vercel.app/dashboard
 
 ## 📸 Screenshots
 - Dashboard overview (KPIs + charts)
